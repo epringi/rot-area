@@ -32,8 +32,8 @@ would really suffer the consequences.
 ~
 unique~
 ABG A C 0 0 0
-20 -5 2d21+59 7d7+82 2d4+6 digestion
-4 6 6 9
+65 -5 2d10+80 7d7+82 2d6+2 digestion
+6 7 7 9
 AN AB CD 0
 stand stand none 0
 BSc 0 large unknown
@@ -47,8 +47,8 @@ he is leashed up, and you are not.
 ~
 school monster~
 ABU A 0 AMV 0 0
-65 0 2d6+21 1d2+5 1d3+2 claw
-11 9 9 12
+15 50 32d6+152 15d11+95 6d2+4 claw
+-1 -1 -1 0
 AB AB C C
 stand stand none 25
 ABCDEFHJKMQUV ABCDEFHJKQU medium unknown
@@ -62,7 +62,7 @@ he is leashed up, and you are not.
 ~
 school monster~
 ABHU A 0 AMV 0 0
-65 10 10d10+10 10d10+10 1d2+2 claw
+10 100 21d3+91 10d10+10 2d5+7 claw
 9 9 10 13
 ABO AB C C
 stand stand none 25
@@ -77,8 +77,8 @@ he is leashed up, and you are not.
 ~
 school monster~
 ABFU A 0 AMV 0 0
-40 0 1d5+8 1d5+8 1d2+2 claw
-13 10 9 14
+15 50 32d6+152 15d11+95 2d3+4 claw
+-1 -1 -1 0
 ABEK AB C C
 stand stand none 10
 ABCDEFHJKMQUV ABCDEFHJKQU medium unknown
@@ -92,8 +92,8 @@ he is leashed up, and you are not.
 ~
 school monster~
 ABFHU A 0 AMV 0 0
-60 0 1d2+5 2d4+16 1d2+2 claw
-8 9 8 13
+10 100 21d3+100 10d9+60 2d5+7 claw
+2 2 2 2
 ABJ AB C C
 stand stand none 10
 ABCDEFHJKMQUV ABCDEFHJKQU medium unknown
@@ -534,9 +534,9 @@ treasure GU AO
 0 0 0 0 0
 0 10 1140 P
 A
-5 1
-A
 4 1
+A
+5 1
 E
 diploma~
 This document shows that you have graduated from Mud School.
@@ -553,9 +553,9 @@ light AG A
 0 0 DGH 0 0
 0 20 380 P
 A
-20 -1
-A
 17 -1
+A
+20 -1
 E
 banner~
 This is the official Merc war banner to see you through the darkest realm!
@@ -584,9 +584,9 @@ weapon U AN
 staff 1 4 pound F
 1 40 290 P
 A
-19 1
-A
 18 2
+A
+19 1
 E
 staff~
 You see a staff of great but cheap craftsmanship.  Imprinted on the side is:
@@ -713,11 +713,6 @@ wall.
 ~
 0 131084 1
 E
-plaque~
-This zone (Mud School) is created by Hatchet for any Merc Mud.
-Copyright 1992, 1993.
-~
-E
 sign~
 Equipment check time!  Type 'EQUIPMENT' to see your current equipment.  Right
 now, you have just a vest, a shield, and a weapon.  As you go through Mud
@@ -734,6 +729,11 @@ To stop using a piece of equipment, type 'REMOVE item'.
 Finally, to see the items in your inventory, type 'INVENTORY'.
 
 When you are ready to continue, go west.
+~
+E
+plaque~
+This zone (Mud School) is created by Hatchet for any Merc Mud.
+Copyright 1992, 1993.
 ~
 D2
 You see a path into another room.
@@ -963,7 +963,6 @@ You see the next station of Mud School.
 ~
 0 0 3709
 D5
-You see the combat hall.
 ~
 ~
 0 0 3712
@@ -1018,6 +1017,10 @@ You see the aggressive wimpy monster inside!
 ~
 ~
 0 -1 3714
+D4
+~
+~
+0 0 3711
 D5
 You see the next station below.
 ~

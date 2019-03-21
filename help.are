@@ -146,6 +146,7 @@ PROMPT <%*> where the %* are the various variables you may set yourself.
 		%c :  Display a carriage return (useful for multi-line prompts)
 		%P :  Display the fighting stance your pet is in
 		%Q :  Display how many hit points your pet has
+                %B :  Display a percentage of your opponent's current health
 
 		%R :  Display the vnum you are in (IMMORTAL ONLY)
 		%z :  Display the area name you are in (IMMORTAL ONLY)
@@ -490,14 +491,6 @@ The effect of the spell is reduced or eliminated if the victim makes the
 saving throw successfully.
 
 See also the help sections for individual spells.
-~
-0 EXITS~
-
-Syntax: exits
-
-Tells you the visible exits of the room you are in.  Not all exits are visible.
-You can use the 'bump' technique to find hidden exits.  (Try to walk in a
-certain direction and see what you bump into).
 ~
 0 DROP GET GIVE PUT TAKE~
 
@@ -3400,19 +3393,27 @@ are no longer shown on score (this can be changed by using 'show' command).
 ~
 -1 'RACE HELP' 'RACE' 'RACES'~
 
-ROT has the following races for player characters:
-  Human      the standard race
-  Dwarf      good warriors and clerics, cost 8 creation points
-  Elf        good thieves and mages, cost 5 creation points
-  Giant      huge, tough warriors, cost 6 creation points
-  Pixie      good mages and druids, cost 6 creation points
-  Halfling   very adept thieves and mages, cost 5 creation points
-  HalfOrc    good warriors, cost 6 creation points
-  Goblin     good thieves and vampires, cost 5 creation points
-  HalfElf    good rangers or druids, cost 2 creation points
-  Avian      good druids or clerics, cost 5 creation points
-  Gnome      natural mages, cost 4 creation points
-  Draconian  good mages and warriors, cost 11 creation points
+There are the following races for player characters:
+  Human        The standard race
+  HalfElf      Good rangers or druids, costs 2 creation points
+  Elf          Good thieves and mages, costs 5 creation points
+  Dwarf        Good warriors and clerics, costs 8 creation points
+  Pixie        Good mages and druids, costs 6 creation points
+  Giant        Huge, tough warriors, costs 6 creation points
+  Halfling     Very adept thieves and mages, costs 5 creation points
+  HalfOrc      Good warriors, costs 6 creation points
+  Goblin       Good thieves and vampires, costs 5 creation points
+  Avian        Good druids or clerics, costs 5 creation points
+  Gnome        Natural mages, costs 4 creation points
+  Draconian    Good mages and warriors, costs 11 creation points
+  Gnoll        Coming soon, costs 7 creation points
+  Cloud giant  Coming soon, costs 6 creation points
+  Satyr        Coming soon, costs 6 creation points
+  Minotaur     Coming soon, costs 7 creation points
+  Centaur      Coming soon, costs 9 creation points
+  Titan        Coming soon, costs 11 creation points
+  Demon        Coming soon, costs 20 creation points
+  Gold dragon  Coming soon, costs 25 creation points
 
 Different races have different starting statistics, and also different
 stat maximums for magic items and training.
@@ -3862,6 +3863,18 @@ the details are those of a hyena.  They stand erect on two legs and have
 greenish grey skin, darker near muzzle, with a short reddish grey to dull
 yellow mane.
 ~
+-1 CLOUDGIANT 'CLOUD GIANT' CLOUDGIANTS 'CLOUD GIANTS'~
+
+   Description is coming soon.
+~
+-1 DEMON DEMONS~
+
+   Description is coming soon.
+~
+-1 GOLDDRAGON 'GOLD DRAGON' GOLDDRAGONS 'GOLD DRAGONS'~
+
+   Description is coming soon.
+~
 -1 HEUCUVA HEUCUVAS~
 
 The heucuva is an undead spirit similar in appearance to a skeleton, but
@@ -3937,7 +3950,7 @@ done	     exit the character generation process
 ~
 -1 'MENU CHOICE'~
 
-Choice (add,drop,list,help)?~
+Choice (list, learned, premise, add, drop, info, help)?~
 -1 'GROUPS' 'INFO' 'PREMISE'~
 
 The ROT skill system allows you to fully customize your new character, making
@@ -3962,6 +3975,7 @@ points   exp/level     points   exp/level
 The table continues in a similar manner for higher point totals.
 ~
 -1 'CLASS'~
+For information on character classes see CLASSES.
 
 Syntax:  class
          class {{name} all
@@ -3981,6 +3995,37 @@ Example:
 This will show you all the skills that a gladiator receives, and the levels
 at which they may use them.
 ~
+-1 'CLASS HELP' CLASSES~
+The following classes are available:
+
+Mage:
+   Mages specialize in offensive spells and have the highest powered magic of
+any class.
+
+Cleric:
+   Clerics specialise in healing and defensive magic and are fair fighters.
+
+Thief:
+   Thieves are specialists at thievery and covert actions.
+
+Warrior:
+   Warriors live for combat and the thrill of battle.
+
+Ranger:
+   Rangers are travelling warrior-druids, usually solitary and aloof.
+
+Druid:
+   Druids are the protectors of nature and control powerful natural magic.
+
+Vampire:
+   They are very much like thieves, but possess very potent powers of magic.
+
+Savage:
+   Savages are brutal warrior types that also command mind-altering spells.
+
+Squire:
+   Squires are deft fighters who have skills honed for protecting their charge.
+~
 -1 BASICS 'ROT BASICS'~
 
 The basic skills:
@@ -3988,7 +4033,7 @@ The basic skills:
 Every character starts with two skill groups, one for their class and a default
 set that all characters receive.  The default skills are:
 
-recall  	essential escape skill (see help recall)
+recall		essential escape skill (see help recall)
 scrolls		reading of scrolls and other magical volumes
 staves		use of magical staves
 wands		use of magical wands
@@ -3997,8 +4042,8 @@ for class defaults, check the classes themselves.
 ~
 -1 MAGE 'MAGIC-USER' 'MAGE BASICS' 'MAGE DEFAULT'~
 
-ages specialize in the casting of spells, offensive ones in particular.
-ages have the highest-powered magic of any class, and are the only classes
+Mages specialize in the casting of spells, offensive ones in particular.
+mages have the highest-powered magic of any class, and are the only classes
 able to use the draconian and enchanting spell groups.  They are also very
 skilled at the use of magical items, though their combat skills are the 
 weakest of any class.
@@ -4010,10 +4055,10 @@ All mages begin with skill in the dagger. Any other weapon skills must be
 purchased, at a very high rate.  The default skill selection for mages is
 as follows:
 
-skills:
+Skills:
 lore		the lore of magical items
 
-spell groups:
+Spell groups:
 beguiling	spells that control the mind
 combat		offensive magics, such as fireball and chill touch
 detection	informational magics, such as detect magic and identify
@@ -4039,10 +4084,10 @@ All clerics begin with skill in the mace.  Other weapon or shield skills must
 be purchased, many at a very dear cost.  The default skill selection for 
 clerics is as follows:
 
-skills:
+Skills:
 flail		the proper use of flails
 
-spell groups:
+Spell groups:
 attack		a selection of offensive magics
 creation	the making of physical objects, such as food and water
 curative	spells that cure the sick and feeble of their ailments
@@ -4066,7 +4111,7 @@ All thieves begin with the dagger combat skill, and are learned in steal as
 well.  Any other weapon skills must be purchased, unless the default selection
 is chosen.  This default skill package includes:
 
-skills:
+Skills:
 mace		the use of maces and other blunt weapons
 sword		swordplay and fencing
 backstab	the art of hitting your opponent by surprise
@@ -4079,6 +4124,90 @@ peek		used to look into a person's belongings
 pick lock	a useful skill for breaking and entering
 sneak		with this skill, a thief can walk into a room undetected
 ~
+-1 SAVAGE 'SAVAGE BASICS' 'SAVAGE DEFAULT'~
+
+   Description coming soon.
+
+Skills:
+  Sword         swordplay and fencing
+  Hand to hand  the art of fighting weaponless
+  Kick          use your feet to inflict damage during a fight
+  Trip          a good way to introduce an opponent to the floor
+  Gouge         poke people in the eye to put them off
+  Disarm        used to deprive your opponent of his weapon
+  Dodge         the best way to take a punch is not to be there
+  Fast healing  improves healing, takes less time to heal
+  Shield block  the art of parrying with a shield
+
+Spells:
+  Beguiling       spells that control the mind
+  Detection       informational magics, such as detect magic and identify
+  Enhancement     spells that maximize physical potential, such as haste
+  Transportation  spells for getting from here to there
+~
+-1 SQUIRE 'SQUIRE BASICS' 'SQUIRE DEFAULT'~
+
+   Description coming soon.
+
+Skills:
+  Sword            swordplay and fencing
+  Hand to hand     the art of fighting weaponless
+  Kick             use your feet to inflict damage during a fight
+  Trip             a good way to introduce an opponent to the floor
+  Gouge            poke people in the eye to put them off
+  Weaponsmaster    skill in multiple weapons
+  Bash             knock your opponent down during battle
+  Disarm           used to deprive your opponent of his weapon
+  Enhanced damage  this skill multiplies your damage in battle
+  Grip             resist being disarmed
+  Parry            the art of parrying with weapons
+  Rescue           allows you to take the blows aimed for a companion
+  Shield block     the art of parrying with a shield
+  Third attack     allows the skilled warrior to land three blows in one round
+  Fourth attack    allows the skilled warrior to land four blows in one round
+~
+-1 BARBARIAN 'BARBARIAN BASICS' 'BARBARIAN DEFAULT'~
+
+   Description coming soon.
+
+Skills:
+  Sword         swordplay and fencing
+  Hand to hand  the art of fighting weaponless
+  Kick          use your feet to inflict damage during a fight
+  Trip          a good way to introduce an opponent to the floor
+  Gouge         poke people in the eye to put them off
+  Disarm        used to deprive your opponent of his weapon
+  Dodge         the best way to take a punch is not to be there
+  Fast healing  improves healing, takes less time to heal
+  Shield block  the art of parrying with a shield
+
+Spells:
+  Beguiling       spells that control the mind
+  Detection       informational magics, such as detect magic and identify
+  Enhancement     spells that maximize physical potential, such as haste
+  Transportation  spells for getting from here to there
+~
+-1 KNIGHT 'KNIGHT BASICS' 'KNIGHT DEFAULT'~
+
+   Description coming soon.
+
+Skills:
+  Sword            swordplay and fencing
+  Hand to hand     the art of fighting weaponless
+  Kick             use your feet to inflict damage during a fight
+  Trip             a good way to introduce an opponent to the floor
+  Gouge            poke people in the eye to put them off
+  Weaponsmaster    skill in multiple weapons
+  Bash             knock your opponent down during battle
+  Disarm           used to deprive your opponent of his weapon
+  Enhanced damage  this skill multiplies your damage in battle
+  Grip             resist being disarmed
+  Parry            the art of parrying with weapons
+  Rescue           allows you to take the blows aimed for a companion
+  Shield block     the art of parrying with a shield
+  Third attack     allows the skilled warrior to land three blows in one round
+  Fourth attack    allows the skilled warrior to land four blows in one round
+~
 -1 WARRIOR 'WARRIOR BASICS' 'WARRIOR DEFAULT'~
 
 Warriors live for combat and the thrill of battle. They are the best fighters
@@ -4090,7 +4219,7 @@ Warriors begin with skill in the sword, and gain a second attack in combat.
 Other weapon skills may be purchased cheaply, or gained in the default skill
 package, which includes the following:
 
-skills:
+Skills:
 weaponsmaster	this group provides knowledge of all weapon types
 shield block	the art of parrying with a shield
 bash		a forceful rush with the body, designed to flatten your foes
@@ -4111,14 +4240,14 @@ Rangers don't have the pure combat effectiveness of warriors, and lack
 the total control of druidic magic that druids possess, but the combination
 of those disciplines makes them a class to be reckoned with.
 
-skills:
+Skills:
 backstab        the art of hitting your opponent by surprise
 enhanced damage this skill multiplies your damage in battle
 parry           the art of parrying with weapons
 shield block    the art of parrying with a shield
 weaponsmaster   this group provides knowledge of all weapon types
 
-spell groups:
+Spell groups:
 curative        spells that cure the sick and feeble of their ailments
 healing         spells for treating wounds, from scratches to death blows
 transportation  spells for getting from here to there
@@ -4135,13 +4264,13 @@ They control a very powerful blend of magic, potent healing spells with
 devastating combat spells, but they don't have transportation spells, as
 druids are not wont to travel.  They aren't always well suited for it.
 
-skills:
+Skills:
 lore            the lore of magical items
 second attack   with training, the skilled druid can hit twice as fast
 shield block    the art of parrying with a shield
 sneak           with this skill, a druid can walk into a room undetected
 
-spell groups:
+Spell groups:
 attack          a selection of offensive magics
 benedictions    powerful magics that grant the blessings of the gods
 creation        the making of physical objects, such as food and water
@@ -4163,14 +4292,14 @@ Vampires are not really a class in the traditional since, as many don't
 choose to be what they are, and their powers are not the result of education
 and training, but of undead nature.
 
-skills:
+Skills:
 backstab        the art of hitting your opponent by surprise
 disarm          used to deprive your opponent of his weapon
 dodge           the best way to take a punch is not to be there
 shield block    the art of parrying with a shield
 sneak           with this skill, a vampire can walk into a room undetected
 
-spell groups:
+Spell groups:
 beguiling       spells that control the mind
 detection       informational magics, such as detect magic and identify
 enhancement     spells that maximize physical potential, such as haste
@@ -4193,10 +4322,10 @@ high rate.
  
 The default skill selection for wizards is as follows:
  
-skills:
+Skills:
   Lore
  
-spell groups:
+Spell groups:
   Beguiling
   Combat
   Detection
@@ -5249,21 +5378,22 @@ Syntax: edit room		-Enters the editor for the current room.
 
 The following commands are available from within the REDITOR:
 
-commands            - prints a list of possible commands
-create <vnum>       - creates a room with a certain vnum
-desc                - edit description of room
-done                - exists the room editor and returns to normal play
-ed                  - type this command for additonal extra-description help
-format              - format(wordwrap) the room description
-name <room title>   - changes the room title
-show                - hitting return, or 'show' shows the room stats
-oshow <vnum>        - shows an object with given vnum
-olist               - lists objects in this area.
-mshow <vnum>        - shows a mobile with given vnum
-mlist               - lists mobiles in this area.
-room <flags>        - room attributes, type ? ROOM for a list
-sector <type>       - terrain of room, type ? SECTOR for a list
-<direction>         - see help EXIT, or type <dir> ?
+commands                - prints a list of possible commands
+create <vnum>           - creates a room with a certain vnum
+desc                    - edit description of room
+done                    - exists the room editor and returns to normal play
+ed                      - type this command for additonal extra-description help
+format                  - format(wordwrap) the room description
+name <room title>       - changes the room title
+show                    - hitting return, or 'show' shows the room stats
+oshow <vnum>            - shows an object with given vnum
+olist                   - lists objects in this area.
+mshow <vnum>            - shows a mobile with given vnum
+mlist                   - lists mobiles in this area.
+room <flags>            - room attributes, type ? ROOM for a list
+sector <type>           - terrain of room, type ? SECTOR for a list
+<direction> dig <vnum>  - see help EXIT, or type <dir> ?
+<direction> delete  - see help EXIT, or type <dir> ?
 ~
 0 EXIT~
 
@@ -5283,6 +5413,14 @@ flags are ones not included in the reset info.  i.e. closed is due to
 a player closing the door and not due to the door being set to be closed.
 
 -South to [ 3744] Key: [   -1] Exit flags: [door CLOSED bashed pickproof]
+~
+0 EXITS~
+
+Syntax: exits
+
+Tells you the visible exits of the room you are in.  Not all exits are visible.
+You can use the 'bump' technique to find hidden exits.  (Try to walk in a
+certain direction and see what you bump into).
 ~
 0 OEDIT~
 
@@ -5307,7 +5445,7 @@ v2 <num>            - sets the value '2' on the object
 v3 <num>            - sets the value '3' on the object
 v4 <num>            - sets the value '4' on the objcet
 weight <num>        - sets the weight of the object
-type         	    - type of object, type ? TYPE for a list
+type                - type of object, type ? TYPE for a list
 extra		    - attributes of object, type ? EXTRA for a list
 wear                - where object is worn, type ? WEAR for a list
 material            - material the object is made from
